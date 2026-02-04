@@ -23,7 +23,3 @@ export class TechRadarApi {
   }
 
 }
-
- export const getTechFn = () => {
-   return fetch('https://65c1f652f7e6ea59682a27c8.mockapi.io/Technologies')
- }

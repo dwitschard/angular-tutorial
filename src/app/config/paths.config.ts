@@ -12,5 +12,9 @@ export const PATHS: { [key: string]: NavigationItem } = {
   TECH_RADAR: {
     path: 'tech-radar',
     label: 'Tech Radar'
+  },
+  COUNTER: {
+    path: 'counter',
+    label: 'Counter'
   }
 }
