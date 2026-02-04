@@ -14,8 +14,10 @@ import {UserService} from '../../services/user.service';
 
     <h3>Add User</h3>
 
+    <!--
     <h4>Template Form</h4>
     <app-add-user-template-form [prefilledModel]="getPrefilledUserValue()"/>
+-->
 
     <h4>Reactive Form</h4>
     <app-add-user-reactive-form (onFormSubmit)="storeUser($event)"/>

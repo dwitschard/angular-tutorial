@@ -76,6 +76,11 @@ export class AddUserTemplateForm implements OnInit {
   onSubmit() {
     console.log('Form submitted')
     console.dir(this.model)
-    this.onFormSubmit.emit(this.model)
+
+    if (this.model.email.includes('@')) {
+      this.onFormSubmit.emit(this.model)
+    } else {
+      return;
+    }
   }
 }

@@ -1,8 +1,12 @@
-import {Route} from '@angular/router';
+import {Route, Router} from '@angular/router';
 import {Home} from '../pages/home/home';
 import {PATHS} from './paths.config';
-import {UserManagement} from '../pages/user-management/user-management';
+import {UserManagementPage} from '../pages/user-management/user-management-page.component';
 import {TechRadarDashboard} from '../features/tech-radar/pages/tech-radar-dashbaord/tech-radar-dashboard';
+import {
+  AddUserReactiveForm
+} from '../features/user-management/dumb_components/add-user-reactive-form/add-user-reactive-form';
+import {inject} from '@angular/core';
 
 const {HOME, USER_MANAGEMENT, TECH_RADAR} = PATHS;
 
@@ -13,11 +17,22 @@ export const routes: Route[] = [
   },
   {
     path: USER_MANAGEMENT.path,
-    component: UserManagement
-  },
-  {
-    path: USER_MANAGEMENT.path,
-    component: UserManagement
+    component: UserManagementPage,
+    children: [
+      {
+        path: 'tech-list', component: TechRadarDashboard, canActivate: [
+          () => {
+            const canActivate = true;
+
+            if (!canActivate) {
+              const router = inject(Router)
+              router.navigate(['/user-management'])
+            }
+            return true
+          }
+        ]
+      }
+    ],
   },
   {
     path: TECH_RADAR.path,

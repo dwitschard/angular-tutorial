@@ -1,13 +1,13 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Technology} from '../tech-radar.types';
+import {Technology} from '../../tech-radar.types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TechRadarApi {
 
-  //private http = inject(HttpClient)
+  // private http = inject(HttpClient)
 
   constructor(private http: HttpClient) {
   }
@@ -23,3 +23,7 @@ export class TechRadarApi {
   }
 
 }
+
+ export const getTechFn = () => {
+   return fetch('https://65c1f652f7e6ea59682a27c8.mockapi.io/Technologies')
+ }

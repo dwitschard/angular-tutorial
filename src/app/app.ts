@@ -9,8 +9,17 @@ import {PATHS} from './config/paths.config';
     RouterOutlet,
     Navigation
   ],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  template: `
+    <app-navigation [links]="getAvailableLinks()"></app-navigation>
+
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  styles: `
+    .my-class {
+    }
+  `
 })
 export class App {
   getAvailableLinks() {

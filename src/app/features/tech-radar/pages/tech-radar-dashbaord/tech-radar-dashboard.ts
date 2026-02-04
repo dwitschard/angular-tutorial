@@ -1,10 +1,11 @@
 import {Component, inject} from '@angular/core';
-import {TechRadarApi} from '../../services/tech-radar.api';
+import {getTechFn, TechRadarApi} from '../../services/api/tech-radar.api';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {ListTechRadar} from '../../dumb_components/list-tech-radar/list-tech-radar';
 import {AsyncPipe} from '@angular/common';
 import {TableTechRadar} from '../../dumb_components/table-tech-radar/table-tech-radar';
 import {Technology} from '../../tech-radar.types';
+import {Router, ROUTES} from '@angular/router';
 
 @Component({
   selector: 'app-tech-radar',

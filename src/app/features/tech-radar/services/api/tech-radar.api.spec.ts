@@ -1,7 +1,7 @@
 import {TestBed} from '@angular/core/testing';
 
 import {HttpClient, provideHttpClient} from '@angular/common/http';
-import {Technology} from '../tech-radar.types';
+import {Technology} from '../../tech-radar.types';
 import {of} from 'rxjs';
 import {TechRadarApi} from './tech-radar.api';
 
