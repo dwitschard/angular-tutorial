@@ -8,11 +8,11 @@ import {Technology} from '../../tech-radar.types';
     <h3>List View</h3>
     <ul class="technology-list">
       @for (technology of technologies(); track technology.name) {
-        <div class="style-it-fancy">
+        <!--<div class="style-it-fancy">-->
           <li [attr.data-testid]="'LIST_ITEM_' + technology.name">
             {{ technology.name }} - {{ technology.ring }} - {{ technology.kategorie }} - {{ technology.description }}
           </li>
-        </div>
+        <!--</div>-->
       }
     </ul>
   `,

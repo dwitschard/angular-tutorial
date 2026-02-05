@@ -11,7 +11,7 @@ describe('User Navigates to Tech-Radar Page', () => {
 
     cy.url().should('include', '/tech-radar')
 
-    cy.contains('Tech Radar II')
+    cy.contains('Tech Radar')
     cy.contains('Table')
     cy.contains('List View')
 
